@@ -14,8 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-
+from django.urls import path,include#将子路由包含进总路由
+# 工程总路由
 urlpatterns = [
+    # 默认的后台管理系统的总路由，可以忽略
     path('admin/', admin.site.urls),
+    # 将子应用中的子路由注册到总路由
+    path("",include("ty6yt6.urls"))
+
 ]
