@@ -14,10 +14,24 @@ from django.views import View
 #   def 跟请求方法同名的函数名(self,request):
 #         return 响应对象
 
-#
-class RegisterView(View):
+# 类视图添加扩展类体现复用性
+# python中自定义扩展类，通常以·Mixin·结尾
+class ListModelMixin(object):
+    # 扩展一个输出的功能
+    # list扩展类
+    def list(self,request,*args,**kwargs):
+        pass
+
+class CreateModelMixin(object):
+    def create(self,request,*args,**kwargs):
+        pass
+
+# 将上两个类（父类）继承到这个类（子类）中，可以直接调用父类中的功能
+class RegisterView(View,ListModelMixin,CreateModelMixin):
     def get(self, request):
+        self.list(request)
         return http.HttpResponse("返回注册页面")
 
     def post(self, request):
+        self.create(request)
         return http.HttpResponse("实现注册逻辑")
