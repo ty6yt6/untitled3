@@ -1,8 +1,52 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django import http
 from django.views import View
 # Create your views here.
 import json
+
+# 以下代码演示响应
+
+class LoginRedirectView(View):
+    # 登录页面：POST http:xxxx/login_redirect/
+    def post(self,request):
+        # 如果用户登录成功后，把用户引导到首页（重定向）
+        # return redirect("目标地址(注意要加根路径)")
+        # 因为请求的发起者对应的地址是/login_redirect/
+        # 要重定向到index/时，没有根路径时，结果就会把这个地址拼接到原链接，即/login_redirect/index/，所以会报错
+        # 因此要加根路径。这时它就不会像上面那么处理。
+        # 再或者，可以把完整链接写到地址处
+        return redirect("/index/")
+
+class IndexView(View):
+    # 首页视图：GET http:127.0.0.1/index
+    def get(self,request):
+        return http.HttpResponse("这是一个首页")
+
+
+class JSONResponseView(View):
+    # GET xxxx/resp_json/
+    def get(self,request):
+        # json默认传的是字典数据，所以要准备一个字典，json会将该字典数据解析成json字符串，并且响应给客户端
+        dict_data = {
+            "name":"liubai",
+            "age":11
+        }
+        return http.JsonResponse(dict_data)
+        # 扩展：JsonResponse除了默认接受字典以外，是否可以接受其他的类型."safe"为True时，默认为字典，如果是False，则可以传列表数据或其他
+        # return http.JsonResponse("列表数据",safe=False)
+
+class Response1View(View):
+    # 演示HttpResponse
+    # GET xxxx/response1/
+    # 提示：HttpResponse默认返回字符串
+    # 如果想响应字符串以外数据，如图片：HttpResponse(响应体：图片的原始数据，content_type="image/jpg")
+    def get(self,request):
+        # return http.HttpResponse(content="响应体",content_type="数据类型(默认text/html)",status="状态码(默认200)",)
+        # return http.HttpResponse(content="HttpResponse",content_type="text/html",status="200")
+        return http.HttpResponse(content="HttpResponse")#(简写，因为后面两个有默认值，不写就等于默认)
+
+
+
 
 class URLParam3View(View):
     # 测试re_path()提取路径参数

@@ -16,5 +16,17 @@ urlpatterns = [
 
     path("url_param2/<mobile:phone_num>/",views.URLParam2View.as_view()),
     # 匹配完后要用正则表达式的组把正则提取出来（）
-    re_path(r"^url_param3/(?P<phone_num>1[3-9]\d{9})/$",views.URLParam3View.as_view())
+    re_path(r"^url_param3/(?P<phone_num>1[3-9]\d{9})/$",views.URLParam3View.as_view()),
+
+    # /response1/
+    path("response1/",views.Response1View.as_view()),
+
+    # /resp_json/
+    path("resp_json/",views.JSONResponseView.as_view()),
+
+    # 以下路由演示重定向
+    # 首页/index/
+    path("index/",views.IndexView.as_view()),
+    # 注册页面/login_redirect/
+    path("login_redirect/",views.LoginRedirectView.as_view()),
 ]
