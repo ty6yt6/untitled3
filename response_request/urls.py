@@ -9,5 +9,8 @@ urlpatterns = [
 
     # http://127.0.0.1:8000/formdata/
     path("formdata/",views.FormDataParamView.as_view()),
-    path("json/",views.JSONParamView.as_view())
+    path("json/",views.JSONParamView.as_view()),
+    # path("url_param1/18/",views.URLParam1View.as_view()),
+    # 提取18:path("url_param1/<路由转换器，提取路径参数：变量（接收提取的路径参数）>/",views.URLParam1View.as_view()),
+    path("url_param1/<int:age>/",views.URLParam1View.as_view()),
 ]

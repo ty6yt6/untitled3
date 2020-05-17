@@ -4,6 +4,17 @@ from django.views import View
 # Create your views here.
 import json
 
+class URLParam1View(View):
+    # 测试path()提取普通路径参数：http://127.0.0.1:8000/url_param1/18/
+    # 提取路径参数是在路由系统里完成的
+
+    def get(self,request,age):
+        # 视图内部的关键字要和路由中的关键字一样，比如：age
+
+        return http.HttpResponse("测试path()提取普通路径参数：%s" % age)
+
+
+
 class JSONParamView(View):
     # http://127.0.0.1:8000/json/
     # JSON中传递username，password
@@ -20,9 +31,6 @@ class JSONParamView(View):
         print(username,password)
         return http.HttpResponse("测试提取JSON数据")
         # 在解析json时，前端传送的json数据不对，则会报错，代码500。前端应该传raw（原始）
-
-
-
 
 
 # 测试表单类型的请求体数据
