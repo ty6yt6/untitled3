@@ -4,6 +4,21 @@ from django.views import View
 # Create your views here.
 import json
 
+class URLParam3View(View):
+    # 测试re_path()提取路径参数
+    # GET xx/url_param3/1822222222
+    def get(self,request,phone_num):
+        # 提取手机号
+        return http.HttpResponse("re_path()实现的提取手机号：%s"%phone_num)
+
+
+
+class URLParam2View(View):
+    def get(self,request,phone_num):
+        print(phone_num)
+        return http.HttpResponse("测试手机号提取：%s"%phone_num)
+
+
 class URLParam1View(View):
     # 测试path()提取普通路径参数：http://127.0.0.1:8000/url_param1/18/
     # 提取路径参数是在路由系统里完成的

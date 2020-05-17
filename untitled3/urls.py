@@ -15,6 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include#将子路由包含进总路由
+
+# 注册自定义路由转换器
+# 1、导入注册路由转换器的方法
+# 2、调用注册路由转换器的方法，完成路由转换器的注册
+from django.urls.converters import register_converter
+from converters import MobileConverter
+# 注册函数
+# register_converter("自定义的路由转换器","别名")
+register_converter(MobileConverter,"mobile")
+
+
+
 # 工程总路由
 urlpatterns = [
     # 默认的后台管理系统的总路由，可以忽略
@@ -23,5 +35,6 @@ urlpatterns = [
     path("",include("ty6yt6.urls")),
 
     path("", include("response_request.urls"))
+
 
 ]

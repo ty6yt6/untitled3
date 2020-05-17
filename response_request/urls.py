@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path,re_path
 from . import views
 
 urlpatterns = [
@@ -13,4 +13,8 @@ urlpatterns = [
     # path("url_param1/18/",views.URLParam1View.as_view()),
     # 提取18:path("url_param1/<路由转换器，提取路径参数：变量（接收提取的路径参数）>/",views.URLParam1View.as_view()),
     path("url_param1/<int:age>/",views.URLParam1View.as_view()),
+
+    path("url_param2/<mobile:phone_num>/",views.URLParam2View.as_view()),
+    # 匹配完后要用正则表达式的组把正则提取出来（）
+    re_path(r"^url_param3/(?P<phone_num>1[3-9]\d{9})/$",views.URLParam3View.as_view())
 ]
