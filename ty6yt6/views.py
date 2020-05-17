@@ -14,6 +14,17 @@ from django.views import View
 #   def 跟请求方法同名的函数名(self,request):
 #         return 响应对象
 
+# 以下代码用户演示path()、re_path()
+class LoginView(View):
+    # 用户登录类视图:
+    # 地址：http://127.0.0.1:8000/users/login/
+
+    def get(self,request):
+        return http.HttpResponse("这是个登录页面")
+
+
+
+
 # 类视图添加扩展类体现复用性
 # python中自定义扩展类，通常以·Mixin·结尾
 class ListModelMixin(object):

@@ -20,6 +20,8 @@ urlpatterns = [
     # 默认的后台管理系统的总路由，可以忽略
     path('admin/', admin.site.urls),
     # 将子应用中的子路由注册到总路由
-    path("",include("ty6yt6.urls"))
+    path("",include("ty6yt6.urls")),
+
+    path("", include("response_request.urls"))
 
 ]
