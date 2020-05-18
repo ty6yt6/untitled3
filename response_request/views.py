@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,reverse
 from django import http
 from django.views import View
 # Create your views here.
@@ -15,7 +15,13 @@ class LoginRedirectView(View):
         # 要重定向到index/时，没有根路径时，结果就会把这个地址拼接到原链接，即/login_redirect/index/，所以会报错
         # 因此要加根路径。这时它就不会像上面那么处理。
         # 再或者，可以把完整链接写到地址处
-        return redirect("/index/")
+        # return redirect("/index/")
+
+        # 路由反向解析：解决重定向时达到动态地址效果
+        # redirect(reserve('总路由别名:子路由的别名'))
+        # ret_url = reverse("总路由别名：子路由别名")
+        ret_url = reverse("zongluyou:index")
+        return redirect(ret_url)
 
 class IndexView(View):
     # 首页视图：GET http:127.0.0.1/index

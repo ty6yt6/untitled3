@@ -26,7 +26,6 @@ from converters import MobileConverter
 register_converter(MobileConverter,"mobile")
 
 
-
 # 工程总路由
 urlpatterns = [
     # 默认的后台管理系统的总路由，可以忽略
@@ -34,7 +33,10 @@ urlpatterns = [
     # 将子应用中的子路由注册到总路由
     path("",include("ty6yt6.urls")),
 
-    path("", include("response_request.urls"))
+    # path("", include("response_request.urls"))
 
+    # 给子应用的总路由起别名，目的是为了让重定向地址可以动态获取
+    # path('', include(('子路由', '子应用名字'), namespace='总路由别名'))
+    path("",include(('response_request.urls','response_request'),namespace='zongluyou')),
 
 ]

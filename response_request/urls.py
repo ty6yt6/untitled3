@@ -26,7 +26,10 @@ urlpatterns = [
 
     # 以下路由演示重定向
     # 首页/index/
-    path("index/",views.IndexView.as_view()),
+    # path("index/",views.IndexView.as_view()),
     # 注册页面/login_redirect/
     path("login_redirect/",views.LoginRedirectView.as_view()),
+
+    # 动态重定向页面：给子路由起别名，为了让重定向页面可以动态获取
+    path("index/",views.IndexView.as_view(),name="index"),
 ]
