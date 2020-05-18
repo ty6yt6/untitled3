@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class BookInfo(models,Model):
+class BookInfo(models.Model):
     # 图书信息：演示一对多中的一
     # 定义模型属性，映射数据表字段
     btitle = models.CharField(max_length=20,verbose_name="书名")
