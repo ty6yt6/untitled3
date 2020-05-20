@@ -46,5 +46,11 @@ class TestModelView1(View):
         # BookInfo.objects.filter(id=6).update(btitle="哈利波特")
 
 
+        # 物理删除：delete()
+        BookInfo.objects.filter(id=7).delete()
+        # 逻辑删除：模型对象 = 模型类.objects.get()  -->  模型对象.is_delete = True  -->  模型对象.save()
+        book = BookInfo.objects.get(id=8)
+        book.is_delete = True
+        book.save()
         return http.HttpResponse("CHENGGONG")
 
