@@ -22,7 +22,16 @@ class TestModelView2(View):
         # book = BookInfo.objects.all().count()
 
         # 查询满足条件的记录个数：查询未被逻辑删除的数据个数
-        book = BookInfo.objects.filter(is_delete=False).count()
+        # book = BookInfo.objects.filter(is_delete=False).count()
+        # print(book)
+        # return http.HttpResponse("查询成功")
+
+        # 过滤查询
+        # 过滤查询的语法：模型类.objects.filter(属性__条件表达式=值)
+        # 1.查询书名为天龙八部的个数
+        # book = BookInfo.objects.filter(btitle__exact="三国演义").count()
+        # 可简写
+        book = BookInfo.objects.filter(btitle="三国演义")
         print(book)
         return http.HttpResponse("查询成功")
 
