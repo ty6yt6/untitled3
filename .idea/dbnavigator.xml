@@ -35,14 +35,17 @@
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="93155e0f-5b78-49c6-b7e2-06359ab79f9c" object-ref="schemas/django_demo/tables/tb_books" />
+      <object connection-id="93155e0f-5b78-49c6-b7e2-06359ab79f9c" object-ref="schemas/django_demo/tables/tb_heros" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="93155e0f-5b78-49c6-b7e2-06359ab79f9c" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="93155e0f-5b78-49c6-b7e2-06359ab79f9c" dataset="django_demo.tb_books" active-filter-id="EMPTY_FILTER" />
-    <filter-actions connection-id="93155e0f-5b78-49c6-b7e2-06359ab79f9c" dataset="django_demo.tb_heros" active-filter-id="" />
+    <filter-actions connection-id="93155e0f-5b78-49c6-b7e2-06359ab79f9c" dataset="django_demo.tb_heros" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -86,7 +89,7 @@
           <deprecated-pwd value="bXlzcWw=" />
         </database>
         <properties>
-          <auto-commit value="false" />
+          <auto-commit value="true" />
         </properties>
         <ssh-settings>
           <active value="false" />

@@ -35,11 +35,13 @@ class TestModelView1(View):
         # 新增：save(),create()
         # save()
             # 查询出要修改的记录/模型对象
-        book = BookInfo.objects.get(id=5)
-        book.btitle = "西游你改不改记"
-        book.save()
+        # book = BookInfo.objects.get(id=5)
+        # book.btitle = "西游你改不改记"
+        # book.save()
             # 新值覆盖旧值
             # 同步新值
-
+        # create()
+        # 语法：模型类.objects.filter('条件').update(模型属性=新值)
+        BookInfo.objects.filter(id=6).update(btitle="哈利波特")
         return http.HttpResponse("CHENGGONG")
 
