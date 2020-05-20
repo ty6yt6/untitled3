@@ -14,12 +14,17 @@ class TestModelView2(View):
 
         # 查询表中所有记录
         # all(),不能加条件
-        book = BookInfo.objects.all()
+        # book = BookInfo.objects.all()
+        # print(book)
+        # return http.HttpResponse("查询成功")
+
+        # 查询记录的个数：查询表中所有记录的个数
+        # book = BookInfo.objects.all().count()
+
+        # 查询满足条件的记录个数：查询未被逻辑删除的数据个数
+        book = BookInfo.objects.filter(is_delete=False).count()
         print(book)
         return http.HttpResponse("查询成功")
-
-
-
 
 # class TestModelView1(View):
 #     # 测试增删改
