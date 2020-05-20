@@ -18,8 +18,11 @@ class BookInfo(models.Model):
         db_table = "tb_books"
 
     def __str__(self):
-        # 定义每个数据对象的显示信息
+        # 定义每个数据对象的显示信息，当输出该对象时自动调用
         # 输出该模型数据对象时，只输出书名
+        # 需求：每次在调试BookInfo的操作结果时，都输出书名，保证让我知道当前操作的结果
+        # 参数：self，就是当前类属于的对象
+        # 返回描述信息
         return self.btitle
 
 class HeroInfo(models.Model):
