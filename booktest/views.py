@@ -32,7 +32,7 @@ class TestModelView1(View):
         #     bcomment = 222,
         # )
 
-        # 新增：save(),create()
+        # 修改：save(),update()
         # save()
             # 查询出要修改的记录/模型对象
         # book = BookInfo.objects.get(id=5)
@@ -40,8 +40,11 @@ class TestModelView1(View):
         # book.save()
             # 新值覆盖旧值
             # 同步新值
-        # create()
+
+        # update()
         # 语法：模型类.objects.filter('条件').update(模型属性=新值)
-        BookInfo.objects.filter(id=6).update(btitle="哈利波特")
+        # BookInfo.objects.filter(id=6).update(btitle="哈利波特")
+
+
         return http.HttpResponse("CHENGGONG")
 
