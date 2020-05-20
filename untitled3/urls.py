@@ -39,4 +39,5 @@ urlpatterns = [
     # path('', include(('子路由', '子应用名字'), namespace='总路由别名'))
     path("",include(('response_request.urls','response_request'),namespace='zongluyou')),
 
+    path("",include("booktest.urls")),
 ]
