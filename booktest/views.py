@@ -10,7 +10,11 @@ class TestModelView2(View):
     def get(self,request):
         # 基本查询
         # 查询指定记录：只查询第一条记录，优先选get()，默认只查一条记录
-        book = BookInfo.objects.get(id=8)
+        # book = BookInfo.objects.get(id=8)
+
+        # 查询表中所有记录
+        # all(),不能加条件
+        book = BookInfo.objects.all()
         print(book)
         return http.HttpResponse("查询成功")
 
