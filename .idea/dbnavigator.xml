@@ -35,9 +35,7 @@
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="93155e0f-5b78-49c6-b7e2-06359ab79f9c" object-ref="schemas/django_demo/tables/tb_books" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="93155e0f-5b78-49c6-b7e2-06359ab79f9c" />
