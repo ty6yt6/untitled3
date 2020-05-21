@@ -7,6 +7,25 @@ from django.db.models import F,Q
 from django.db.models import Sum,Avg,Max,Min
 # Create your views here.
 
+class BooksView(View):
+    # xxx/books/
+    def get(self,request):
+
+        # 构造上下文字典：将上下文字典中的数据渲染到模板中
+        # context = {
+        #     "name":"你爸爸",
+        #     "age":111
+        # }
+        book = BookInfo.objects.all()
+        context = {
+            "book":book,
+            "title":"沙比老师"
+        }
+        return render(request,"booktest/index.html",context)
+
+
+
+
 class TestModelView2(View):
     # 查询测试：xxx/query1/
 

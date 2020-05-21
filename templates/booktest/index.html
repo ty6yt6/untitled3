@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+
+<h>啦啦啦啦啦</h>
+<li>{{book}}</li>
+<hr>
+{% for i in book %}
+{#显示书名#}
+{#<h3>{{ i }}</h3>#}
+{#显示书的信息#}
+<h3>{{ i.btitle }}--{{ i.bpub_date }}</h3>
+{% endfor %}
+</body>
+</html>

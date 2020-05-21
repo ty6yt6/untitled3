@@ -25,7 +25,7 @@
     <show-object-properties value="false" />
     <loaded-nodes>
       <connection connection-id="93155e0f-5b78-49c6-b7e2-06359ab79f9c">
-        <schema name="django_demo" object-types="dataset trigger, view, table, function, procedure, column, constraint, index" />
+        <schema name="django_demo" object-types="dataset trigger, table, constraint, index, column" />
       </connection>
     </loaded-nodes>
   </component>
